@@ -11,7 +11,6 @@ import org.quartz.JobBuilder;
 import org.quartz.JobDetail;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
-import org.quartz.SimpleScheduleBuilder;
 import org.quartz.Trigger;
 import org.quartz.TriggerBuilder;
 import org.quartz.impl.StdScheduler;
@@ -26,7 +25,7 @@ public class HWTest {
     public static void main(String[] args) {
         ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext-quartz.xml");
 
-        scheduler = (StdScheduler)ac.getBean("scheduler");
+        scheduler = (StdScheduler)ac.getBean("quartzScheduler");
 
         startSchedule();
     }
